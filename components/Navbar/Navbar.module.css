@@ -1,0 +1,423 @@
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.navbarContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.brandLogo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    gap: 4;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+}
+
+.logo {
+    display: none;
+}
+
+.logoMovil{
+    width: 70px;
+}
+
+.textGold {
+    color: var(--gold);
+}
+
+
+/* ================================
+   DESKTOP NAVIGATION
+================================ */
+
+.navLinks {
+    display: none;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navLinks a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover,
+.navLinks .active {
+    color: var(--gold);
+}
+
+
+/* ================================
+   MOBILE BUTTON
+================================ */
+
+.menuBtn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menuBtn div {
+    width: 1.5rem;
+    height: 2px;
+    background-color: var(--white);
+    margin-bottom: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.menuBtn div:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================================
+   MOBILE MENU
+================================ */
+
+.mobileMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 2rem 1.5rem;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    text-align: left;
+
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.mobileMenuOpen {
+    display: flex;
+}
+
+.mobileMenu > a {
+    display: block;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.mobileMenu > a:hover {
+    color: var(--gold);
+}
+
+
+/* ================================
+   DROPDOWN PROYECTOS
+================================ */
+
+.dropdown {
+    position: relative;
+}
+
+
+/* ================================
+   BOTÓN PROYECTOS
+================================ */
+
+.dropdownButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 0.35rem;
+
+    padding: 0;
+    margin: 0;
+
+    background: none;
+    border: none;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.dropdownButton:hover {
+    color: var(--gold);
+}
+
+
+/* ================================
+   FLECHA
+================================ */
+
+.arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    margin-bottom: 4px;
+    padding: 0;
+
+    font-size: 1rem;
+    line-height: 0.8;
+
+    transition: transform 0.3s ease;
+}
+
+.arrowOpen {
+    transform: rotate(180deg);
+}
+
+
+/* Girar flecha solo en hover de escritorio */
+
+.navLinks .dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* ================================
+   DROPDOWN MENU
+================================ */
+
+.dropdownMenu {
+    position: absolute;
+
+    top: calc(100% + 1rem);
+    left: 50%;
+
+    min-width: 200px;
+
+    transform: translateX(-50%) translateY(-10px);
+
+    padding: 0.7rem;
+
+    background: rgba(15, 15, 15, 0.97);
+    backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Mostrar al pasar el mouse en escritorio */
+
+.navLinks .dropdown:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* ================================
+   LINKS DEL DROPDOWN
+================================ */
+
+.dropdownMenu a {
+    display: block;
+
+    padding: 0.85rem 1rem;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    text-decoration: none;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.dropdownMenu a:hover {
+    color: var(--gold);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================================
+   MOBILE DROPDOWN (AJUSTES MÓVIL)
+================================ */
+
+.mobileMenu .dropdown {
+    width: 100%;
+}
+
+.mobileMenu .dropdownButton {
+    width: 100%;
+    justify-content: space-between; /* Texto a la izquierda, flecha a la derecha */
+    padding: 0.5rem 0;
+    font-size: 0.875rem; /* Mantiene la misma escala tipográfica del menú móvil */
+}
+
+.mobileMenu .dropdownMenu {
+    position: static;
+
+    width: 100%;
+    min-width: 0;
+
+    transform: none;
+
+    margin-top: 0.5rem;
+    padding: 0 0 0 1rem; /* Indentación sutil para los sub-ítems */
+
+    background: transparent;
+    border: none;
+
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+/* Clase dinámica que abre el submenú al hacer click en móvil */
+.mobileMenu .dropdownMenuMobileOpen {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   DESKTOP (RESPONSIVE)
+================================ */
+
+@media (min-width: 768px) {
+    /*****************LOGO********************/
+    .logoMovil {
+        display: none;
+    }
+    .logo {
+        display: flex;
+        width: 70px;
+    }
+    .brandLogo {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        gap: 4;
+        letter-spacing: 0.2em;
+        color: var(--white);
+        text-decoration: none;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navLinks {
+        display: flex;
+    }
+
+    .menuBtn {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+
+    .navLinks .dropdownButton {
+        width: auto;
+        justify-content: flex-start;
+        padding: 0;
+        font-size: 0.75rem;
+    }
+
+    /* El dropdown de escritorio funciona de forma independiente */
+
+    .navLinks .dropdownMenu {
+        position: absolute;
+
+        top: calc(100% + 1rem);
+        left: 50%;
+
+        width: auto;
+        min-width: 200px;
+
+        margin-top: 0;
+        padding: 0.7rem;
+
+        background: rgba(15, 15, 15, 0.97);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateX(-50%) translateY(-10px);
+
+        display: block;
+    }
+
+    .navLinks .dropdown:hover .dropdownMenu {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateX(-50%) translateY(0);
+    }
+}
