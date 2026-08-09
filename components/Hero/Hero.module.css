@@ -1,0 +1,218 @@
+/* Variables de color de la marca */
+:root {
+    --gold: #c5a880;
+    --gold-hover: #b3956d;
+    --white: #ffffff;
+    --dark: #0f1115;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    /* min-height evita que el contenido se desborde en teléfonos pequeños */
+    min-height: 100vh;
+    min-height: 100dvh; /* dvh maneja la barra del navegador móvil adecuadamente */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Padding para asegurar que el contenido no pegue a los bordes */
+    padding: 6rem 1.5rem 5rem;
+    box-sizing: border-box;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/headerImage.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.85) 0%, 
+        rgba(0, 0, 0, 0.65) 50%, 
+        rgba(0, 0, 0, 0.85) 100%
+    );
+}
+
+/* En escritorio volvemos al gradiente horizontal */
+@media (min-width: 768px) {
+    .hero-overlay {
+        background: linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0.9), 
+            rgba(0, 0, 0, 0.6), 
+            rgba(0, 0, 0, 0.4)
+        );
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hero-subtitle {
+    color: var(--gold);
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Escalado dinámico para títulos */
+.hero-title {
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+}
+
+.desktop-br {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .desktop-br {
+        display: inline;
+    }
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    font-weight: 300;
+    max-width: 46rem;
+    margin: 0 0 2.5rem;
+    line-height: 1.6;
+}
+
+/* Botones adaptables */
+.hero-buttons {
+    display: flex;
+    flex-direction: column; /* Apilados en móvil */
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .hero-buttons {
+        flex-direction: row; /* En línea en pantallas medianas/grandes */
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+    }
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%; /* Botón full width en móviles */
+}
+
+@media (min-width: 480px) {
+    .btn-primary,
+    .btn-secondary {
+        width: auto; /* Ancho automático en escritorio */
+        display: inline-block;
+    }
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--dark);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* Indicador de Scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Ocultar el scroll indicator en móviles donde la altura es reducida */
+@media (max-height: 600px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, -6px);
+    }
+    60% {
+        transform: translate(-50%, -3px);
+    }
+}
