@@ -1,0 +1,100 @@
+/* Secciones Comunes */
+.section {
+    padding: 4rem 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-bg {
+    background-color: var(--dark-lighter);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    color: var(--white);
+    font-weight: 300;
+}
+
+.section-divider {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--gold);
+    margin: 1.5rem auto 0;
+}
+
+/* Grilla de Servicios (Organizada Horizontalmente) */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 2rem;
+}
+
+/* 2 columnas en pantallas medianas (tablets) */
+@media (min-width: 640px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3 columnas horizontales en pantallas grandes (desktop) */
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.service-card {
+    background-color: var(--dark-lighter);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.3rem;
+    border-radius: 2px;
+    transition: all 0.5s ease;
+}
+
+.service-card:hover {
+    border-color: rgba(197, 168, 128, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+    color: var(--gold);
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-4px);
+}
+
+.service-title {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-title {
+    color: var(--gold);
+}
+
+.service-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.625;
+}
