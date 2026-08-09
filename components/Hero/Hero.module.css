@@ -18,7 +18,7 @@
     justify-content: center;
     overflow: hidden;
     /* Padding para asegurar que el contenido no pegue a los bordes */
-    padding: 6rem 1.5rem 5rem;
+    padding: 10rem 1.5rem 5rem;
     box-sizing: border-box;
 }
 

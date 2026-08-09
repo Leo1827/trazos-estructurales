@@ -34,7 +34,7 @@
 
 .brandLogo {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: 1rem;
     gap: 4;
     letter-spacing: 0.2em;
     color: var(--white);
