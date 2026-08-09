@@ -1,4 +1,7 @@
-/* Variables de color de la marca */
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+
 :root {
     --gold: #c5a880;
     --gold-hover: #b3956d;
@@ -6,31 +9,56 @@
     --dark: #0f1115;
 }
 
-/* Hero Section */
+
+/* ==========================================================================
+   2. SECCIÓN HERO (CONTENEDOR PRINCIPAL)
+   ========================================================================== */
+
 .hero {
     position: relative;
-    /* min-height evita que el contenido se desborde en teléfonos pequeños */
+    /* Evita desbordamiento en pantallas pequeñas y ajusta para la barra de navegación móvil */
     min-height: 100vh;
-    min-height: 100dvh; /* dvh maneja la barra del navegador móvil adecuadamente */
+    min-height: 100dvh; 
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* Padding para asegurar que el contenido no pegue a los bordes */
     padding: 10rem 1.5rem 5rem;
     box-sizing: border-box;
 }
 
+
+/* ==========================================================================
+   3. COMPONENTES DEL CARRUSEL DE FONDO
+   ========================================================================== */
+
+/* Contenedor del Carrusel */
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Imágenes / Capas de Fondo */
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/images/headerImage.jpg');
     background-size: cover;
     background-position: center;
     transform: scale(1.05);
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    will-change: opacity;
 }
 
+.hero-bg.active {
+    opacity: 1;
+}
+
+/* Capa Gradiente (Overlay) */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -42,8 +70,8 @@
     );
 }
 
-/* En escritorio volvemos al gradiente horizontal */
 @media (min-width: 768px) {
+    /* En pantallas grandes cambia a un gradiente horizontal */
     .hero-overlay {
         background: linear-gradient(
             to right, 
@@ -54,6 +82,61 @@
     }
 }
 
+/* Controles / Flechas de Navegación */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15; /* Renderiza por encima de la capa overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    background: rgba(15, 17, 21, 0.4);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    border-radius: 2px;
+    color: var(--white);
+    font-size: 1.25rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: rgba(197, 168, 128, 0.8);
+    color: var(--dark);
+    border-color: var(--gold);
+}
+
+.arrow-left {
+    left: 1rem;
+    width: 10px;
+    height: 10px;
+    font-size: 0.8em;
+}
+
+.arrow-right {
+    right: 1rem;
+    width: 10px;
+    height: 10px;
+    font-size: 0.8em;
+}
+
+@media (min-width: 768px) {
+    .arrow-left {
+        left: 2rem;
+        width: 10px;
+    }
+    .arrow-right {
+        right: 2rem;
+    }
+}
+
+
+/* ==========================================================================
+   4. CONTENIDO TEXTUAL Y TIPOGRAFÍA
+   ========================================================================== */
+
 .hero-content {
     position: relative;
     z-index: 10;
@@ -63,32 +146,44 @@
     text-align: left;
 }
 
+/* Subtítulo Superior */
 .hero-subtitle {
-    color: var(--gold);
-    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 500;
     display: block;
     margin-bottom: 1rem;
+    color: var(--gold);
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+    font-weight: 500;
     line-height: 1.4;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
 }
 
-/* Escalado dinámico para títulos */
+/* Título Principal */
 .hero-title {
+    margin-bottom: 3rem;
+    color: var(--white);
     font-size: clamp(2rem, 5vw + 1rem, 4rem);
     font-weight: 300;
-    color: var(--white);
     line-height: 1.15;
-    margin-bottom: 1.5rem;
 }
 
 .hero-title span {
+    color: var(--gold);
     font-style: italic;
     font-weight: 400;
-    color: var(--gold);
 }
 
+/* Texto Descriptivo */
+.hero-description {
+    max-width: 46rem;
+    margin: 0 0 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Salto de Línea Exclusivo para Escritorio */
 .desktop-br {
     display: none;
 }
@@ -99,54 +194,33 @@
     }
 }
 
-.hero-description {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(0.875rem, 1.2vw, 1rem);
-    font-weight: 300;
-    max-width: 46rem;
-    margin: 0 0 2.5rem;
-    line-height: 1.6;
-}
 
-/* Botones adaptables */
+/* ==========================================================================
+   5. BOTONES Y ACCIONES (CTA)
+   ========================================================================== */
+
 .hero-buttons {
     display: flex;
-    flex-direction: column; /* Apilados en móvil */
+    flex-direction: column; /* Disposición vertical para móviles */
     gap: 1rem;
     width: 100%;
 }
 
-@media (min-width: 480px) {
-    .hero-buttons {
-        flex-direction: row; /* En línea en pantallas medianas/grandes */
-        align-items: center;
-        justify-content: flex-start;
-        width: auto;
-    }
-}
-
 .btn-primary,
 .btn-secondary {
+    width: 100%;
     padding: 1rem 2rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    text-align: center;
     box-sizing: border-box;
-    width: 100%; /* Botón full width en móviles */
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-@media (min-width: 480px) {
-    .btn-primary,
-    .btn-secondary {
-        width: auto; /* Ancho automático en escritorio */
-        display: inline-block;
-    }
-}
-
+/* Botón Principal */
 .btn-primary {
     background-color: var(--gold);
     color: var(--dark);
@@ -158,6 +232,7 @@
     transform: translateY(-2px);
 }
 
+/* Botón Secundario */
 .btn-secondary {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -170,26 +245,45 @@
     transform: translateY(-2px);
 }
 
-/* Indicador de Scroll */
+@media (min-width: 480px) {
+    .hero-buttons {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        display: inline-block;
+        width: auto; /* Ancho ajustado al texto en escritorio */
+    }
+}
+
+
+/* ==========================================================================
+   6. INDICADOR DE SCROLL & ANIMACIONES
+   ========================================================================== */
+
 .scroll-indicator {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateX(-50%);
     opacity: 0.5;
     animation: bounce 2s infinite;
 }
 
 .scroll-indicator span {
+    margin-bottom: 0.5rem;
+    color: var(--white);
     font-size: 8px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 0.5rem;
 }
 
 .scroll-line {
@@ -198,13 +292,14 @@
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Ocultar el scroll indicator en móviles donde la altura es reducida */
+/* Ocultar en dispositivos con altura de pantalla reducida */
 @media (max-height: 600px) {
     .scroll-indicator {
         display: none;
     }
 }
 
+/* Animación Rebote */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translate(-50%, 0);
@@ -214,5 +309,21 @@
     }
     60% {
         transform: translate(-50%, -3px);
+    }
+}
+
+/* Animación para suavizar el cambio de contenido en el hero */
+.hero-content {
+    animation: fadeInContent 0.8s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
