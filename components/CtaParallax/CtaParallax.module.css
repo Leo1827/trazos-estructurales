@@ -1,0 +1,69 @@
+.ctaParallaxSection {
+  position: relative;
+  width: 100%;
+  padding: 5rem 1.5rem;
+  /* Imagen de fondo con efecto Parallax */
+  background-image: url("/images/headerImage.jpg"); /* Cambia por la ruta de tu imagen de obra */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Capa oscura superior para dar legibilidad al texto */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 17, 21, 0.75); /* Mantiene tu tono oscuro */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.title {
+  color: var(--white, #ffffff);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--gold, #c5a880);
+  color: var(--dark, #0f1115);
+  padding: 0.85rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnPrimary:hover {
+  background-color: var(--gold-hover, #b3956d);
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
