@@ -1,11 +1,20 @@
 
+import ClientsCarousel from "@/components/ClientsCarousel/ClientsCarousel";
 import CtaBar from "@/components/CtaBar/CtaBar";
 import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
 import InfoSection from "@/components/InfoSection/InfoSection";
 import Navbar from "@/components/Navbar/Navbar";
+import TextSection from "@/components/TextSection/TextSection";
 
 export default function EmpresaPage() {
+    // Clients carousel
+    const clientLogos = [
+        { id: 1, src: "/images/clientes/acsa.png", alt: "Constructora 1" },
+        { id: 2, src: "/images/clientes/bh.png", alt: "Constructora 2" },
+        { id: 3, src: "/images/clientes/cci.png", alt: "Constructora 3" },
+        { id: 4, src: "/images/clientes/colpatria.png", alt: "Constructora 4" },
+    ];
   return (
         <>
             <Navbar />
@@ -42,6 +51,27 @@ export default function EmpresaPage() {
                                     - Mejorar la productividad
                                     - Anticipar problemas antes de que ocurran
                                     - Proteger la rentabilidad del proyecto"
+                />
+
+                {/* Sección de Experiencia laboral */}
+                <TextSection title="Experiencia laboral">
+                    <p>
+                    Contamos con más de 30 años de experiencia laboral en la construcción
+                    de redes hidráulicas, sanitarias, gas e incendios, más de 100 proyectos
+                    ejecutados nos respaldan.
+                    </p>
+                    <p>
+                    Adicional hemos incorporado el diseño de redes hidráulicas, sanitarias,
+                    gas e incendios con personal especializado que brinda un aporte técnico
+                    basado en las normas NTC 1500 y NFPA 14 entre otras, garantizando
+                    procesos de alta calidad.
+                    </p>
+                </TextSection>
+
+                {/* Carrusel de Clientes */}
+                <ClientsCarousel 
+                    title="Nuestros clientes" 
+                    logos={clientLogos} 
                 />
                 <CtaBar />
             </main>

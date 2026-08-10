@@ -1,0 +1,113 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  color: #C5A880;
+  font-size: 2.25rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem 0;
+}
+
+.underline {
+  width: 70px;
+  height: 2px;
+  background-color: #e5e7eb;
+}
+
+/* Contenedor con efecto de difuminado en las esquinas */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Pista animada */
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 4rem;
+  animation: scroll 25s linear infinite;
+}
+
+/* Pausa la animación al pasar el mouse */
+.carouselContainer:hover .track {
+  animation-play-state: paused;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%); /* Escala de grises por defecto para armonizar */
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.logoImg:hover {
+  filter: grayscale(0%); /* Recobra su color original al hover */
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animación infinita */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .slide {
+    width: 130px;
+  }
+
+  .track {
+    gap: 2rem;
+  }
+}
