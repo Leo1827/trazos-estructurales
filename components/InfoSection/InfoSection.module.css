@@ -3,7 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 1.5rem;
-  border: 1px solid rgba(206, 182, 182, 0.05);
+  border: 1px solid #b419193a;
 }
 
 .contentWrapper {
@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(206, 182, 182, 0.05);
+  border: 1px solid #b419193a;
 }
 
 .image {
@@ -48,7 +48,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-  border: 1px solid rgba(206, 182, 182, 0.05);
+  border: 1px solid #b419193a;
 }
 
 .title {

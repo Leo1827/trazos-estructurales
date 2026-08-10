@@ -1,5 +1,7 @@
 
+import CtaBar from "@/components/CtaBar/CtaBar";
 import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
+import Footer from "@/components/Footer/Footer";
 import InfoSection from "@/components/InfoSection/InfoSection";
 import Navbar from "@/components/Navbar/Navbar";
 
@@ -41,7 +43,10 @@ export default function EmpresaPage() {
                                     - Anticipar problemas antes de que ocurran
                                     - Proteger la rentabilidad del proyecto"
                 />
+                <CtaBar />
             </main>
+
+            <Footer />
         </>
     );
 }

@@ -52,7 +52,7 @@
   left: -1.5rem;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--gold, #c5a880);
+  border: 1px solid #b41919c4;
   border-radius: 4px;
   z-index: 1;
   pointer-events: none;
