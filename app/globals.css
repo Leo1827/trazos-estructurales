@@ -64,3 +64,8 @@
   .animate-fade-in {
       animation: fadeIn 1.2s ease-out forwards;
   }
+
+   /* Section emprise */
+   .margin-top{
+     margin-top: 6.5rem;
+   }

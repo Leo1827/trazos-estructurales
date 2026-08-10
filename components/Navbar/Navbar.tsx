@@ -1,58 +1,75 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen((prev) => !prev);
-    };
+    
+    // Hook para obtener la ruta actual
+    const pathname = usePathname();
 
     const closeMenu = () => {
         setIsMenuOpen(false);
         setIsMobileProjectsOpen(false);
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
+
     const toggleMobileProjects = () => {
         setIsMobileProjectsOpen((prev) => !prev);
     };
+
+    // Función auxiliar para saber si un enlace está activo
+    const isActive = (path: string): boolean => pathname === path;
 
     return (
         <nav className={styles.navbar}>
             <div className={styles.navbarContainer}>
 
                 {/* Logo */}
-                <a
-                    href=""
+                <Link
+                    href="/"
                     className={styles.brandLogo}
                     onClick={closeMenu}
                 >
-                    <img src="/images/logo.png" alt="" className={styles.logoMovil} />
-                    TRAZOS ESTRUCTURALES<span className={styles.textGold}></span>
-                    <img src="/images/logo.png" alt="" className={styles.logo} />
-                    
-                </a>
+                    <img src="/images/logo.png" alt="Logo móvil" className={styles.logoMovil} />
+                        TRAZOS ESTRUCTURALES<span className={styles.textGold}></span>
+                    <img src="/images/logo.png" alt="Logo" className={styles.logo} />
+                </Link>
 
                 {/* Navegación escritorio */}
                 <div className={styles.navLinks}>
-                    <a href="#" className={styles.active}>
+                    <Link 
+                        href="/" 
+                        className={isActive("/") ? styles.active : ""}
+                    >
                         Inicio
-                    </a>
+                    </Link>
 
-                    <a href="#empresa" onClick={closeMenu}>
+                    {/* Dirige a la página /empresa */}
+                    <Link 
+                        href="/emprise" 
+                        className={isActive("/emprise") ? styles.active : ""}
+                        onClick={closeMenu}
+                    >
                         La empresa
-                    </a>
+                    </Link>
 
-                    <a href="#servicios">
+                    <Link 
+                        href="/servicios"
+                        className={isActive("/servicios") ? styles.active : ""}
+                    >
                         Servicios
-                    </a>
+                    </Link>
 
                     {/* Dropdown Proyectos Escritorio */}
                     <div className={styles.dropdown}>
-
                         <button
                             type="button"
                             className={styles.dropdownButton}
@@ -62,30 +79,19 @@ export default function Navbar() {
                         </button>
 
                         <div className={styles.dropdownMenu}>
-
-                            <a href="#proyecto-1">
-                                Proyecto 1
-                            </a>
-
-                            <a href="#proyecto-2">
-                                Proyecto 2
-                            </a>
-
-                            <a href="#proyecto-3">
-                                Proyecto 3
-                            </a>
-
-                            <a href="#proyecto-4">
-                                Proyecto 4
-                            </a>
-
+                            <Link href="/proyectos/1">Proyecto 1</Link>
+                            <Link href="/proyectos/2">Proyecto 2</Link>
+                            <Link href="/proyectos/3">Proyecto 3</Link>
+                            <Link href="/proyectos/4">Proyecto 4</Link>
                         </div>
-
                     </div>
 
-                    <a href="#contacto">
+                    <Link 
+                        href="/contacto"
+                        className={isActive("/contacto") ? styles.active : ""}
+                    >
                         Contacto
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Botón menú móvil */}
@@ -108,21 +114,32 @@ export default function Navbar() {
                     isMenuOpen ? styles.mobileMenuOpen : ""
                 }`}
             >
-                <a href="#" className={styles.active} onClick={closeMenu}>
+                <Link 
+                    href="/" 
+                    className={isActive("/") ? styles.active : ""} 
+                    onClick={closeMenu}
+                >
                     Inicio
-                </a>
+                </Link>
 
-                <a href="#empresa" onClick={closeMenu}>
+                <Link 
+                    href="/emprise" 
+                    className={isActive("/emprise") ? styles.active : ""} 
+                    onClick={closeMenu}
+                >
                     La empresa
-                </a>
+                </Link>
 
-                <a href="#servicios" onClick={closeMenu}>
+                <Link 
+                    href="/servicios" 
+                    className={isActive("/servicios") ? styles.active : ""} 
+                    onClick={closeMenu}
+                >
                     Servicios
-                </a>
+                </Link>
 
                 {/* Dropdown Proyectos Móvil */}
                 <div className={styles.dropdown}>
-
                     <button
                         type="button"
                         className={styles.dropdownButton}
@@ -133,30 +150,20 @@ export default function Navbar() {
                     </button>
 
                     <div className={`${styles.dropdownMenu} ${isMobileProjectsOpen ? styles.dropdownMenuMobileOpen : ""}`}>
-
-                        <a href="#proyecto-1" onClick={closeMenu}>
-                            Proyecto 1
-                        </a>
-
-                        <a href="#proyecto-2" onClick={closeMenu}>
-                            Proyecto 2
-                        </a>
-
-                        <a href="#proyecto-3" onClick={closeMenu}>
-                            Proyecto 3
-                        </a>
-
-                        <a href="#proyecto-4" onClick={closeMenu}>
-                            Proyecto 4
-                        </a>
-
+                        <Link href="/proyectos/1" onClick={closeMenu}>Proyecto 1</Link>
+                        <Link href="/proyectos/2" onClick={closeMenu}>Proyecto 2</Link>
+                        <Link href="/proyectos/3" onClick={closeMenu}>Proyecto 3</Link>
+                        <Link href="/proyectos/4" onClick={closeMenu}>Proyecto 4</Link>
                     </div>
-
                 </div>
 
-                <a href="#contacto" onClick={closeMenu}>
+                <Link 
+                    href="/contacto" 
+                    className={isActive("/contacto") ? styles.active : ""} 
+                    onClick={closeMenu}
+                >
                     Contacto
-                </a>
+                </Link>
             </div>
         </nav>
     );
