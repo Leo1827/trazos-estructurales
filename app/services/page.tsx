@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar/Navbar"
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
 
 
-export default function EmpresaPage() {
+export default function ServicesPage() {
     // Servicios grid
 
       return (

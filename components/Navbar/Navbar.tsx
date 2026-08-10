@@ -21,7 +21,9 @@ export default function Navbar() {
         setIsMenuOpen((prev) => !prev);
     };
 
-    const toggleMobileProjects = () => {
+    const toggleMobileProjects = (e: React.MouseEvent) => {
+        // Previene la navegación al hacer clic en la flecha o desplegable móvil si es necesario
+        e.stopPropagation();
         setIsMobileProjectsOpen((prev) => !prev);
     };
 
@@ -68,21 +70,16 @@ export default function Navbar() {
                         Servicios
                     </Link>
 
-                    {/* Dropdown Proyectos Escritorio */}
-                    <div className={styles.dropdown}>
-                        <button
-                            type="button"
-                            className={styles.dropdownButton}
-                        >
+                    {/* Dropdown Proyectos Escritorio (Corregido: div en lugar de Link wrapper) */}
+                    <div className={`${styles.dropdown} ${isActive("/projects") ? styles.active : ""}`}>
+                        <Link href="/projects" className={styles.dropdownButton}>
                             Proyectos
                             <span className={styles.arrow}>⌄</span>
-                        </button>
+                        </Link>
 
                         <div className={styles.dropdownMenu}>
-                            <Link href="/proyectos/1">Proyecto 1</Link>
-                            <Link href="/proyectos/2">Proyecto 2</Link>
-                            <Link href="/proyectos/3">Proyecto 3</Link>
-                            <Link href="/proyectos/4">Proyecto 4</Link>
+                            <Link href="/projects/1">Diseño</Link>
+                            <Link href="/projects/2">Construcción Y Supervisión Técnica</Link>
                         </div>
                     </div>
 
@@ -138,22 +135,28 @@ export default function Navbar() {
                     Servicios
                 </Link>
 
-                {/* Dropdown Proyectos Móvil */}
-                <div className={styles.dropdown}>
-                    <button
-                        type="button"
-                        className={styles.dropdownButton}
-                        onClick={toggleMobileProjects}
-                    >
-                        Proyectos
-                        <span className={`${styles.arrow} ${isMobileProjectsOpen ? styles.arrowOpen : ""}`}>⌄</span>
-                    </button>
+                {/* Dropdown Proyectos Móvil (Corregido: div en lugar de Link wrapper) */}
+                <div className={`${styles.dropdown} ${isActive("/projects") ? styles.active : ""}`}>
+                    <div className={styles.mobileDropdownHeader}>
+                        <Link 
+                            href="/projects" 
+                            className={styles.dropdownButton}
+                            onClick={closeMenu}
+                        >
+                            Proyectos
+                        </Link>
+                        <button
+                            type="button"
+                            className={styles.mobileToggleBtn}
+                            onClick={toggleMobileProjects}
+                        >
+                            <span className={`${styles.arrow} ${isMobileProjectsOpen ? styles.arrowOpen : ""}`}>⌄</span>
+                        </button>
+                    </div>
 
                     <div className={`${styles.dropdownMenu} ${isMobileProjectsOpen ? styles.dropdownMenuMobileOpen : ""}`}>
-                        <Link href="/proyectos/1" onClick={closeMenu}>Proyecto 1</Link>
-                        <Link href="/proyectos/2" onClick={closeMenu}>Proyecto 2</Link>
-                        <Link href="/proyectos/3" onClick={closeMenu}>Proyecto 3</Link>
-                        <Link href="/proyectos/4" onClick={closeMenu}>Proyecto 4</Link>
+                        <Link href="/projects/1" onClick={closeMenu}>Diseño</Link>
+                        <Link href="/projects/2" onClick={closeMenu}>Construcción Y Supervisión Técnica</Link>
                     </div>
                 </div>
 
