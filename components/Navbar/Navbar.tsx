@@ -62,8 +62,8 @@ export default function Navbar() {
                     </Link>
 
                     <Link 
-                        href="/servicios"
-                        className={isActive("/servicios") ? styles.active : ""}
+                        href="/services"
+                        className={isActive("/services") ? styles.active : ""}
                     >
                         Servicios
                     </Link>
@@ -131,8 +131,8 @@ export default function Navbar() {
                 </Link>
 
                 <Link 
-                    href="/servicios" 
-                    className={isActive("/servicios") ? styles.active : ""} 
+                    href="/services" 
+                    className={isActive("/services") ? styles.active : ""} 
                     onClick={closeMenu}
                 >
                     Servicios
