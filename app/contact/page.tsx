@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact/Contact";
 import CtaBar from "@/components/CtaBar/CtaBar";
 import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
@@ -14,7 +15,8 @@ export default function ContactPage() {
                     title="Contacto" 
                     bgImage="/images/headerImage3.jpg" 
                 />
-            
+
+                <Contact />
                 <CtaBar />
             </main>
 
