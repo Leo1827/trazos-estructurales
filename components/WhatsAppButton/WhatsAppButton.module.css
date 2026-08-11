@@ -1,0 +1,169 @@
+.container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: inherit;
+}
+
+/* Ventanita Flotante */
+.popover {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 260px;
+  margin-bottom: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.popoverOpen{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.popoverHeader {
+  background-color: #121212;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #25d366;
+}
+
+.closePopover {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.closePopover:hover {
+  color: #fff;
+}
+
+.popoverBody {
+  padding: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.popoverBody:hover {
+  background-color: rgba(37, 211, 102, 0.05);
+}
+
+.popoverBody p {
+  margin: 0 0 6px 0;
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.3;
+}
+
+.actionLink {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #25d366;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Botón Flotante */
+.floatBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.floatBtn i {
+  font-size: 1.4rem;
+}
+
+.btnText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.floatBtn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+/* Ajustes Responsive */
+@media (max-width: 576px) {
+  .container {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Mantiene el texto visible pero reduce el tamaño general */
+  .floatBtn {
+    padding: 8px 14px;
+    gap: 6px;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+  }
+
+  .floatBtn i {
+    font-size: 1.1rem;
+  }
+
+  .btnText {
+    display: inline-block; /* Se asegura de que siga visible */
+    font-size: 0.72rem;
+    letter-spacing: 0.2px;
+  }
+
+  /* Ajuste proporcional del popover / ventanita */
+  .popover {
+    width: 220px;
+    margin-bottom: 8px;
+  }
+
+  .popoverHeader {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+
+  .popoverBody {
+    padding: 10px;
+  }
+
+  .popoverBody p {
+    font-size: 0.75rem;
+  }
+
+  .actionLink {
+    font-size: 0.7rem;
+  }
+}

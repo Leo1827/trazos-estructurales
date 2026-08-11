@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  
 }
 
 @media (min-width: 768px) {
@@ -30,6 +31,7 @@
 .column {
   display: flex;
   flex-direction: column;
+  
 }
 
 .columnTitle {
@@ -130,6 +132,8 @@
   background-color: rgba(0, 0, 0, 0.4);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 1.25rem 1.5rem;
+
+  padding-bottom: 5rem;
 }
 
 .bottomContainer {
