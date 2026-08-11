@@ -12,7 +12,7 @@ interface PreloaderProps {
   onComplete?: () => void;
 }
 
-export default function Preloader({ duration = 2500, onComplete }: PreloaderProps) {
+export default function Preloader({ duration = 1000, onComplete }: PreloaderProps) {
   const [isFading, setIsFading] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
