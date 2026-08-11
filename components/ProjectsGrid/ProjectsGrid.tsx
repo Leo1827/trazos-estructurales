@@ -47,7 +47,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     title: "Consultoria",
     category: "Mejores resultados",
     imageSrc:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "/images/tecnica.jpg",
     isWide: true,
   },
 ];

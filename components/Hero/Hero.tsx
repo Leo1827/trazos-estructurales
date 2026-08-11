@@ -11,9 +11,9 @@ const HERO_SLIDES = [
         title: <>Diseño Arquitectónico. <br className={styles["desktop-br"]} />Supervisión de <span>Obras</span>.</>,
         description: "Empresa especializada en proyectos Arquitectónicos y Estructurales, Desarrollos urbanos. Expertos con más de 20 años de experiencia en Diseño arquitectónico, Construcción, Supervisión de obras y consultoría en proyectos.",
         primaryBtnText: "Contáctanos",
-        primaryBtnLink: "#contacto",
+        primaryBtnLink: "/contact",
         secondaryBtnText: "Ver Proyectos",
-        secondaryBtnLink: "#proyectos",
+        secondaryBtnLink: "/projects",
     },
     {
         image: "/images/headerImage2.jpg",
@@ -21,9 +21,9 @@ const HERO_SLIDES = [
         title: <>Construcción <br className={styles["desktop-br"]} />y <span>Desarrollo Urbano</span>.</>,
         description: "Optimizamos y respaldamos la estructura de tu proyecto con análisis de alta precisión, garantizando seguridad, eficiencia y diseño de vanguardia en cada etapa.",
         primaryBtnText: "Nuestros Servicios",
-        primaryBtnLink: "#servicios",
+        primaryBtnLink: "/services",
         secondaryBtnText: "Solicitar Asesoría",
-        secondaryBtnLink: "#contacto",
+        secondaryBtnLink: "/contact",
     },
     {
         image: "/images/headerImage3.jpg",
@@ -31,9 +31,9 @@ const HERO_SLIDES = [
         title: <>Consultoría <br className={styles["desktop-br"]} />De<span> Proyectos</span>.</>,
         description: "Cada estructura que construimos comienza con una planificación rigurosa, un diseño preciso y un equipo comprometido.",
         primaryBtnText: "Explorar Portafolio",
-        primaryBtnLink: "#proyectos",
+        primaryBtnLink: "/projects",
         secondaryBtnText: "Cotizar Proyecto",
-        secondaryBtnLink: "#cotizar",
+        secondaryBtnLink: "/contact",
     },
 ];
 

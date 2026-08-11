@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -42,11 +42,42 @@ export default function Footer() {
         <div className={styles.column}>
           <h3 className={styles.columnTitle}>MENÚ PRINCIPAL</h3>
           <ul className={styles.menuList}>
-            <li><a href="#inicio">› Inicio</a></li>
-            <li><a href="#nosotros">› La Empresa</a></li>
-            <li><a href="#servicios">› Servicios</a></li>
-            <li><a href="#proyectos">› Proyectos</a></li>
-            <li><a href="#contacto">› Contacto</a></li>
+            <li>
+              <Link 
+                  href="/" 
+              >
+                  › Inicio
+              </Link>
+
+            </li>
+            <li>
+              <Link 
+                  href="/emprise" 
+              >
+                › La empresa
+              </Link>
+            </li>
+            <li>
+              <Link 
+                  href="/services"
+              >
+                › Servicios
+              </Link>
+            </li>
+            <li>
+              <Link 
+                  href="/projects"
+              >
+                › Proyectos
+              </Link>
+            </li>
+            <li>
+              <Link 
+                  href="/contact"
+              >
+                › Contacto
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -9,7 +9,7 @@ export default function CtaParallax() {
         <h2 className={styles.title}>
           ¿Requieres más información? Contáctanos, con gusto te atenderemos
         </h2>
-        <a href="#contacto" className={styles.btnPrimary}>
+        <a href="/contact" className={styles.btnPrimary}>
           Contáctanos <span className={styles.arrow}>&rsaquo;</span>
         </a>
       </div>

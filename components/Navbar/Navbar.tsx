@@ -78,14 +78,17 @@ export default function Navbar() {
                         </Link>
 
                         <div className={styles.dropdownMenu}>
-                            <Link href="/projects/1">Diseño</Link>
-                            <Link href="/projects/2">Construcción Y Supervisión Técnica</Link>
+                            <Link href="/projects/1">1. Proyectos de vivienda</Link>
+                            <Link href="/projects/2">2. Hotel, rentas cortas, centros medicos y comerciales</Link>
+                            <Link href="/projects/3">3. Vivienda campestre</Link>
+                            <Link href="/projects/4">4. Proyectos construidos</Link>
+                            <Link href="/projects/5">5. Supervision de obra</Link>
                         </div>
                     </div>
 
                     <Link 
-                        href="/contacto"
-                        className={isActive("/contacto") ? styles.active : ""}
+                        href="/contact"
+                        className={isActive("/contact") ? styles.active : ""}
                     >
                         Contacto
                     </Link>
@@ -155,14 +158,18 @@ export default function Navbar() {
                     </div>
 
                     <div className={`${styles.dropdownMenu} ${isMobileProjectsOpen ? styles.dropdownMenuMobileOpen : ""}`}>
-                        <Link href="/projects/1" onClick={closeMenu}>Diseño</Link>
-                        <Link href="/projects/2" onClick={closeMenu}>Construcción Y Supervisión Técnica</Link>
+                        <Link href="/projects/1" onClick={closeMenu}>1. Proyectos de vivienda</Link>
+                        <Link href="/projects/2" onClick={closeMenu}>2. Hotel, rentas cortas, centros medicos y comerciales</Link>
+                        <Link href="/projects/3" onClick={closeMenu}>3. Vivienda campestre</Link>
+                        <Link href="/projects/4" onClick={closeMenu}>4. Proyectos construidos</Link>
+                        <Link href="/projects/5" onClick={closeMenu}>5. Supervision de obra</Link>
+                        
                     </div>
                 </div>
 
                 <Link 
-                    href="/contacto" 
-                    className={isActive("/contacto") ? styles.active : ""} 
+                    href="/contact" 
+                    className={isActive("/contact") ? styles.active : ""} 
                     onClick={closeMenu}
                 >
                     Contacto

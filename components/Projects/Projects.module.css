@@ -1,0 +1,335 @@
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #e5e5e5;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 50px;
+}
+
+/* Barra superior minimalista */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resultsCount {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #888;
+  font-weight: 500;
+}
+
+.sortSelect {
+  background: transparent;
+  color: #aaa;
+  border: none;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.sortSelect option {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Grilla de Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+}
+
+/* Card Minimalista Oscura */
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.cardImage {
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .imageOverlay {
+  opacity: 1;
+}
+
+.viewText {
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-bottom: 1px solid #C5A880;
+  padding-bottom: 4px;
+}
+
+/* Información de la Card */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+
+.projectTitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover .projectTitle {
+  color: #C5A880;
+}
+
+.arrowIcon {
+  font-size: 0.9rem;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .arrowIcon {
+  color: #C5A880;
+  transform: translate(2px, -2px);
+}
+
+/* Sidebar Oscura */
+.sidebarTitle {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #C5A880;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recentItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: opacity 0.2s ease;
+}
+
+.recentItem:hover {
+  opacity: 0.8;
+}
+
+.recentImageWrapper {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  flex-shrink: 0;
+  background-color: #111;
+}
+
+.recentItemTitle {
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* Lightbox Modal */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.closeBtn:hover {
+  color: #fff;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modalTitle {
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.modalCounter {
+  color: #666;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.modalImageContainer {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-color: #0a0a0a;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.navBtn:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.prevBtn {
+  left: 10px;
+}
+
+.nextBtn {
+  right: 10px;
+}
+
+/* Estilos para el botón Ver Más */
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 20px;
+}
+
+.loadMoreBtn {
+  background: transparent;
+  color: #C5A880;
+  border: 1px solid #C5A880;
+  padding: 12px 32px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loadMoreBtn:hover {
+  background: #C5A880;
+  color: #000;
+}
+
+/* Adaptación responsive */
+@media (max-width: 992px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImageContainer {
+    height: 50vh;
+  }
+}

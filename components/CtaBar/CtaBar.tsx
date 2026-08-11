@@ -8,7 +8,7 @@ export default function CtaBar() {
         <p className={styles.text}>
           Si tienes alguna duda estamos a tus órdenes
         </p>
-        <a href="#contacto" className={styles.btnOutline}>
+        <a href="/contact" className={styles.btnOutline}>
           Contáctanos <span className={styles.arrow}>&rsaquo;</span>
         </a>
       </div>

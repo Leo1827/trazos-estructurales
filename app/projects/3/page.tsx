@@ -3,7 +3,7 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
 
-export default function ProjectPage() {
+export default function ProjectPageThree() {
     // projects grid
 
       return (
@@ -11,11 +11,11 @@ export default function ProjectPage() {
         <Navbar />
         <main className="margin-top">
             <CtaTitleParallax
-                title="Proyectos" 
-                bgImage="/images/headerProjects.jpg" 
+                title="Vivienda campestre" 
+                bgImage="/images/projects/3.campestre/threeProject.jpg" 
             />
-
-            <Projects title="Todos los Proyectos" />
+            {/* Filtrado dinámico por la categoría 1 */}
+              <Projects categoryId="3" />
         </main>
 
         <Footer />

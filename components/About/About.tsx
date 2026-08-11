@@ -59,7 +59,7 @@ export default function About() {
           </ul>
 
           <div className={styles.ctaWrapper}>
-            <a href="#contacto" className={styles.btnPrimary}>
+            <a href="/emprise" className={styles.btnPrimary}>
               Conoce Más
             </a>
           </div>
