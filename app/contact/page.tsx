@@ -3,6 +3,7 @@ import CtaBar from "@/components/CtaBar/CtaBar";
 import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar"
+import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
 export default function ContactPage() {
     // Servicios grid
@@ -19,7 +20,7 @@ export default function ContactPage() {
                 <Contact />
                 <CtaBar />
             </main>
-
+            <WhatsAppButton />
             <Footer />
         </>
       );

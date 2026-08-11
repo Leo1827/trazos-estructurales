@@ -22,7 +22,6 @@ export default function Navbar() {
     };
 
     const toggleMobileProjects = (e: React.MouseEvent) => {
-        // Previene la navegación al hacer clic en la flecha o desplegable móvil si es necesario
         e.stopPropagation();
         setIsMobileProjectsOpen((prev) => !prev);
     };
@@ -70,7 +69,7 @@ export default function Navbar() {
                         Servicios
                     </Link>
 
-                    {/* Dropdown Proyectos Escritorio (Corregido: div en lugar de Link wrapper) */}
+                    {/* Dropdown Proyectos Escritorio */}
                     <div className={`${styles.dropdown} ${isActive("/projects") ? styles.active : ""}`}>
                         <Link href="/projects" className={styles.dropdownButton}>
                             Proyectos
@@ -92,6 +91,28 @@ export default function Navbar() {
                     >
                         Contacto
                     </Link>
+
+                    {/* Redes Sociales Escritorio */}
+                    <div className={styles.socialNav}>
+                        <a 
+                            href="https://www.instagram.com/trazosestructurales" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            aria-label="Instagram"
+                            className={styles.socialIcon}
+                        >
+                            <i className="fa-brands fa-instagram"></i>
+                        </a>
+                        <a 
+                            href="https://www.facebook.com/profile.php?id=100084462922582" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            aria-label="Facebook"
+                            className={styles.socialIcon}
+                        >
+                            <i className="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
 
                 {/* Botón menú móvil */}
@@ -138,7 +159,7 @@ export default function Navbar() {
                     Servicios
                 </Link>
 
-                {/* Dropdown Proyectos Móvil (Corregido: div en lugar de Link wrapper) */}
+                {/* Dropdown Proyectos Móvil */}
                 <div className={`${styles.dropdown} ${isActive("/projects") ? styles.active : ""}`}>
                     <div className={styles.mobileDropdownHeader}>
                         <Link 
@@ -163,7 +184,6 @@ export default function Navbar() {
                         <Link href="/projects/3" onClick={closeMenu}>3. Vivienda campestre</Link>
                         <Link href="/projects/4" onClick={closeMenu}>4. Proyectos construidos</Link>
                         <Link href="/projects/5" onClick={closeMenu}>5. Supervision de obra</Link>
-                        
                     </div>
                 </div>
 
@@ -174,6 +194,28 @@ export default function Navbar() {
                 >
                     Contacto
                 </Link>
+
+                {/* Redes Sociales Móvil */}
+                <div className={styles.mobileSocialNav}>
+                    <a 
+                        href="https://www.instagram.com/trazosestructurales" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="Instagram"
+                        className={styles.socialIcon}
+                    >
+                        <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a 
+                        href="https://www.facebook.com/profile.php?id=100084462922582" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="Facebook"
+                        className={styles.socialIcon}
+                    >
+                        <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
             </div>
         </nav>
     );

@@ -80,7 +80,7 @@ export default function WhatsAppButton({
         aria-label="Contactar por WhatsApp"
       >
         <i className="fa-brands fa-whatsapp" />
-        <span className={styles.btnText}>Atención al cliente</span>
+        <span className={styles.btnText}>WhatsApp</span>
       </button>
     </div>
   );

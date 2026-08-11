@@ -17,7 +17,6 @@ export default function Footer() {
           <p className={styles.subtext}>Nuestros datos de contacto son:</p>
 
           <ul className={styles.contactList}>
-
             <li>
               <i className="fa-brands fa-whatsapp"></i>
               <span><strong>Cel/WhatsApp:</strong> 311 240 0270 | 315 461 3487</span>
@@ -43,58 +42,60 @@ export default function Footer() {
           <h3 className={styles.columnTitle}>MENÚ PRINCIPAL</h3>
           <ul className={styles.menuList}>
             <li>
-              <Link 
-                  href="/" 
-              >
-                  › Inicio
-              </Link>
-
+              <Link href="/">› Inicio</Link>
             </li>
             <li>
-              <Link 
-                  href="/emprise" 
-              >
-                › La empresa
-              </Link>
+              <Link href="/emprise">› La empresa</Link>
             </li>
             <li>
-              <Link 
-                  href="/services"
-              >
-                › Servicios
-              </Link>
+              <Link href="/services">› Servicios</Link>
             </li>
             <li>
-              <Link 
-                  href="/projects"
-              >
-                › Proyectos
-              </Link>
+              <Link href="/projects">› Proyectos</Link>
             </li>
             <li>
-              <Link 
-                  href="/contact"
-              >
-                › Contacto
-              </Link>
+              <Link href="/contact">› Contacto</Link>
             </li>
           </ul>
         </div>
 
-        {/* Columna 3: Sobre Nosotros */}
+        {/* Columna 3: Sobre Nosotros & Redes */}
         <div className={styles.column}>
           <h3 className={styles.columnTitle}>SOBRE NOSOTROS</h3>
           <p className={styles.text}>
             Nuestro departamento de proyectos, constituido por un grupo integral de experimentados profesionales, está dirigido a la elaboración de todo tipo de proyectos arquitectónicos, cálculos estructurales y desarrollos urbanos.
           </p>
-          <p className={styles.text}>
-            ¡Contáctanos!
-          </p>
+          <p className={styles.text}>¡Contáctanos!</p>
+
+          {/* Redes Sociales en la tercera columna */}
+          <div className={styles.socialContainer}>
+            <span className={styles.socialTitle}>Síguenos en redes:</span>
+            <div className={styles.socialIcons}>
+              <a 
+                href="https://www.instagram.com/trazosestructurales" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram"
+                className={styles.socialBtn}
+              >
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=100084462922582" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook"
+                className={styles.socialBtn}
+              >
+                <i className="fa-brands fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
 
-      {/* Barra Inferior - Copyright */}
+      {/* Barra Inferior - Copyright & Redes */}
       <div className={styles.bottomBar}>
         <div className={styles.bottomContainer}>
           <p className={styles.copyright}>
@@ -103,6 +104,16 @@ export default function Footer() {
                 <span> Mileer leon</span>
             </a>
           </p>
+
+          {/* Iconos de redes en la barra inferior */}
+          <div className={styles.bottomSocial}>
+            <a href="https://www.instagram.com/trazosestructurales" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100084462922582" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i className="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

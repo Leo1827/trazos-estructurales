@@ -6,6 +6,7 @@ import Footer from "@/components/Footer/Footer";
 import InfoSection from "@/components/InfoSection/InfoSection";
 import Navbar from "@/components/Navbar/Navbar";
 import TextSection from "@/components/TextSection/TextSection";
+import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
 export default function EmpresaPage() {
     // Clients carousel
@@ -75,7 +76,7 @@ export default function EmpresaPage() {
                 />
                 <CtaBar />
             </main>
-
+            <WhatsAppButton />
             <Footer />
         </>
     );

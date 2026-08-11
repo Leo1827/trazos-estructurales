@@ -3,6 +3,7 @@ import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar"
 import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
+import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
 
 export default function ServicesPage() {
@@ -20,7 +21,7 @@ export default function ServicesPage() {
                 <ProjectsGrid />
                 <CtaBar />
             </main>
-
+            <WhatsAppButton />
             <Footer />
         </>
       );

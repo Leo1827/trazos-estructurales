@@ -82,6 +82,45 @@
 
 
 /* ================================
+   REDES SOCIALES (ESCRITORIO & MÓVIL)
+================================ */
+
+.socialNav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mobileSocialNav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.socialIcon {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialIcon:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+
+/* ================================
    MOBILE BUTTON
 ================================ */
 
@@ -315,9 +354,9 @@
 
 .mobileMenu .dropdownButton {
     width: 100%;
-    justify-content: space-between; /* Texto a la izquierda, flecha a la derecha */
+    justify-content: space-between;
     padding: 0.5rem 0;
-    font-size: 0.875rem; /* Mantiene la misma escala tipográfica del menú móvil */
+    font-size: 0.875rem;
 }
 
 .mobileMenu .dropdownMenu {
@@ -329,7 +368,7 @@
     transform: none;
 
     margin-top: 0.5rem;
-    padding: 0 0 0 1rem; /* Indentación sutil para los sub-ítems */
+    padding: 0 0 0 1rem;
 
     background: transparent;
     border: none;

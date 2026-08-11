@@ -2,6 +2,7 @@ import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/Projects";
+import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
 export default function ProjectPage() {
     // projects grid
@@ -17,7 +18,7 @@ export default function ProjectPage() {
 
             <Projects title="Todos los Proyectos" />
         </main>
-
+        <WhatsAppButton />
         <Footer />
         </>
       );
