@@ -1,0 +1,139 @@
+/* ================================
+   CONTAINER / OVERLAY
+================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark, #0f1115);
+  color: var(--white, #ffffff);
+  transition: opacity 0.7s cubic-bezier(0.77, 0, 0.175, 1),
+              visibility 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ================================
+   CIRCULAR SPINNER & LOGO
+================================ */
+
+.spinnerContainer {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Círculo Giratorio Elegante */
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  border-top-color: var(--gold, #c5a880);
+  border-right-color: rgba(197, 168, 128, 0.25);
+  animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  animation: pulseLogo 2.4s ease-in-out infinite;
+}
+
+/* ================================
+   TYPOGRAPHY
+================================ */
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-serif, serif);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.goldText {
+  color: var(--gold, #c5a880);
+}
+
+.subtitle {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.35);
+  animation: pulseText 1.8s ease-in-out infinite;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

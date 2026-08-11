@@ -5,6 +5,7 @@ import Feature from "@/components/Feature/Feature";
 import Footer from "@/components/Footer/Footer";
 import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
+import Preloader from "@/components/Preloader/Preloader";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
 
       <main>
+        <Preloader />
         <Hero />
         <Feature />
         <About />

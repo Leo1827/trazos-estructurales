@@ -5,6 +5,7 @@ import CtaTitleParallax from "@/components/CtaTitleParallax/CtaTitleParallax";
 import Footer from "@/components/Footer/Footer";
 import InfoSection from "@/components/InfoSection/InfoSection";
 import Navbar from "@/components/Navbar/Navbar";
+import Preloader from "@/components/Preloader/Preloader";
 import TextSection from "@/components/TextSection/TextSection";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
 
@@ -21,6 +22,7 @@ export default function EmpresaPage() {
             <Navbar />
 
             <main className="margin-top">
+                <Preloader />
                <CtaTitleParallax
                     title="LA EMPRESA" 
                     bgImage="/images/headerImage.jpg" 
