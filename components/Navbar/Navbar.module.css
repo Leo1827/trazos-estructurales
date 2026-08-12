@@ -34,12 +34,13 @@
 
 .brandLogo {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: 0.6rem;
     gap: 4;
     letter-spacing: 0.2em;
     color: var(--white);
     text-decoration: none;
     display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -48,6 +49,7 @@
 
 .logoMovil{
     width: 70px;
+    height: 60px;
 }
 
 .textGold {
@@ -398,11 +400,12 @@
     }
     .logo {
         display: flex;
-        width: 70px;
+        width: 60px;
+        margin-right: 6rem;
     }
     .brandLogo {
         font-family: var(--font-serif);
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         gap: 4;
         letter-spacing: 0.2em;
         color: var(--white);

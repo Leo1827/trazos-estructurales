@@ -40,7 +40,7 @@ export default function Navbar() {
                     onClick={closeMenu}
                 >
                     <img src="/images/logo.png" alt="Logo móvil" className={styles.logoMovil} />
-                        TRAZOS ESTRUCTURALES<span className={styles.textGold}></span>
+                        TRAZOS ESTRUCTURALES GERENCIA DE PROYECTOS<span className={styles.textGold}></span>
                     <img src="/images/logo.png" alt="Logo" className={styles.logo} />
                 </Link>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
                         className={isActive("/emprise") ? styles.active : ""}
                         onClick={closeMenu}
                     >
-                        La empresa
+                        empresa
                     </Link>
 
                     <Link 

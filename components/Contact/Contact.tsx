@@ -121,8 +121,8 @@ export default function Contact() {
               <div className={styles.infoContent}>
                 <span className={styles.infoLabel}>Dirección</span>
                 <p className={styles.infoText}>
-                  Cra. 5 #41-16 Edif. F25 Ofic. 1201<br />
-                  Ibagué, Colombia, 730006
+                  Carrera 7 No. 68-22 T 11<br />
+                  Ibagué, Colombia, 730002
                 </p>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                 <span className={styles.infoLabel}>E-mail</span>
                 <p className={styles.infoText}>
                   <a href="mailto:trazosestructuralessas@gmail.com" className={styles.emailLink}>
-                    trazosestructuralessas@gmail.com
+                    trazossupervisiontecnica@gmail.com
                   </a>
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function Contact() {
             <div className={styles.mapWrapper}>
               <iframe
                 title="Ubicación Trazos Estructurales"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4065.9189427578804!2d-75.21586142494127!3d4.435820243896754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c5f22f69394f%3A0xdbad164e38e4859a!2sHotel%20F25!5e1!3m2!1ses!2sco!4v1786419225094!5m2!1ses!2sco"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4065.9017226083256!2d-75.20041522494127!3d4.438947243870952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c51c5658b93d%3A0x85110c778d14135e!2sCra.%207%20%2368-22%2C%20Ibagu%C3%A9%2C%20Tolima!5e1!3m2!1ses-419!2sco!4v1786514524358!5m2!1ses-419!2sco"
                 width="100%"
                 height="360"
                 style={{ border: 0 }}

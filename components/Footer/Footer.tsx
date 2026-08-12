@@ -23,11 +23,11 @@ export default function Footer() {
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
-              <span><strong>E-mail:</strong> trazosestructuralessas@gmail.com</span>
+              <span><strong>E-mail:</strong> trazossupervisiontecnica@gmail.com</span>
             </li>
             <li>
               <i className="fa-solid fa-location-dot"></i>
-              <span>Cra. 5 #41-16 Edif. F25 Ofic. 1201, Ibagué, Colombia, 730006</span>
+              <span>Carrera 7 No. 68-22 T 11, Ibagué, Colombia, 730002</span>
             </li>
           </ul>
 
