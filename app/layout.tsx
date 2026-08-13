@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+// Configuración de fuentes optimizadas con next/font/google
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,11 +13,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// URL base de la aplicación para resolver rutas relativas de metadatos/Open Graph
-const siteUrl = "https://trazosestructurales.com"; // Sustituir por el dominio real
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const siteUrl = "https://trazosestructurales.com";
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a", // Color principal para barra de navegación móvil
+  themeColor: "#0f172a",
   width: "device-width",
   initialScale: 1,
 };
@@ -24,25 +39,27 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Trazos Estructurales | Diseño Arquitectónico y Construcción en Ibagué",
+    default: "Trazos Estructurales | Cálculo Estructural y Licencias en Ibagué",
     template: "%s | Trazos Estructurales",
   },
   description:
-    "Especialistas en diseño estructural, arquitectura, supervisión técnica y construcción de edificaciones en Ibagué. Calidad, normativa sísmica y proyectos a medida.",
+    "Firma de ingeniería civil y arquitectura en Ibagué. Diseños estructurales conforme a la norma NSR-10, supervisión técnica, licencias de construcción y gestión de obras en el Tolima.",
   keywords: [
-    "Diseño estructural Ibagué",
-    "Diseño arquitectónico Ibagué",
-    "Supervisión técnica de obras",
-    "Construcción de edificaciones Ibagué",
-    "Ingeniería civil Ibagué",
+    "Cálculo estructural Ibagué",
+    "Diseño estructural NSR-10 Ibagué",
     "Licencias de construcción Ibagué",
+    "Supervisión técnica de obras Tolima",
+    "Ingenieros civiles en Ibagué",
+    "Arquitectos en Ibagué",
+    "Planos de construcción Ibagué",
     "Trazos Estructurales",
   ],
   authors: [{ name: "Trazos Estructurales" }],
   creator: "Trazos Estructurales",
   publisher: "Trazos Estructurales",
+  category: "Ingeniería Civil y Arquitectura",
   formatDetection: {
-    email: false,
+    email: true,
     address: true,
     telephone: true,
   },
@@ -64,10 +81,10 @@ export const metadata: Metadata = {
     siteName: "Trazos Estructurales",
     title: "Trazos Estructurales | Ingeniería y Arquitectura en Ibagué",
     description:
-      "Diseño estructural, gestión arquitectónica y supervisión técnica de proyectos de construcción en Ibagué y el Tolima.",
+      "Especialistas en cálculo estructural NSR-10, trámites de licencias y supervisión de obra en Ibagué y Tolima. Cotiza tu proyecto con expertos.",
     images: [
       {
-        url: "/og-image.jpg", // Crear esta imagen en /public (1200x630px)
+        url: "https://www.trazosestructurales.com/images/logo.png",
         width: 1200,
         height: 630,
         alt: "Trazos Estructurales - Ingeniería y Construcción en Ibagué",
@@ -76,9 +93,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trazos Estructurales | Diseño y Construcción en Ibagué",
+    title: "Trazos Estructurales | Cálculo y Licencias en Ibagué",
     description:
-      "Soluciones integrales en diseño estructural, supervisión técnica y arquitectura en Ibagué.",
+      "Diseños estructurales bajo norma NSR-10 y supervisión técnica de edificaciones en Ibagué.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -91,19 +108,53 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Datos estructurados Schema.org para posicionamiento local en Google
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Trazos Estructurales",
+    image: `${siteUrl}/og-image.jpg`,
+    "@id": siteUrl,
+    url: siteUrl,
+    telephone: "+57311 240 0270", // Sustituir por tu teléfono
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Carrera 7 No. 68-22 T 11, Ibagué, Colombia, 730002", // Sustituir
+      addressLocality: "Ibagué",
+      addressRegion: "Tolima",
+      postalCode: "730001",
+      addressCountry: "CO",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 4.43889,
+      longitude: -75.23222,
+    },
+    areaServed: [
+      { "@type": "City", name: "Ibagué" },
+      { "@type": "AdministrativeArea", name: "Tolima" },
+    ],
+    knowsAbout: [
+      "Diseño Estructural NSR-10",
+      "Supervisión Técnica de Obras",
+      "Licencias de Construcción",
+      "Diseño Arquitectónico",
+    ],
+  };
+
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
-        {/* Fuentes y FontAwesome */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
-          rel="stylesheet"
+        {/* Marcado JSON-LD para Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Mantenemos únicamente FontAwesome via CDN para no romper tus iconos */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
