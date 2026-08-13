@@ -5,7 +5,13 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar"
 import Preloader from "@/components/Preloader/Preloader";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Contacto | Trazos Estructurales",
+  description:
+    "Contacta a Trazos Estructurales para solicitar asesoría y cotización en diseño estructural, arquitectura, licencias de construcción y supervisión técnica en Ibagué y Tolima.",
+};
 export default function ContactPage() {
     // Servicios grid
 

@@ -8,7 +8,13 @@ import Navbar from "@/components/Navbar/Navbar";
 import Preloader from "@/components/Preloader/Preloader";
 import TextSection from "@/components/TextSection/TextSection";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppbutton";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Empresa | Trazos Estructurales",
+  description:
+    "Conoce Trazos Estructurales, firma de ingeniería civil y arquitectura en Ibagué, Tolima. Experiencia en diseño estructural, arquitectura, supervisión técnica y gestión de proyectos.",
+};
 export default function EmpresaPage() {
     // Clients carousel
     const clientLogos = [
